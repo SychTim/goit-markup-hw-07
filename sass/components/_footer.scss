@@ -1,0 +1,123 @@
+.footer {
+    background-color: #2F303A;
+    /* временно */
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer>.container {
+    display: flex;
+}
+
+.footer-block-1 {
+    margin-right: 70px;
+}
+
+.address {
+    margin-top: 20px;
+}
+
+.address li:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.address p {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    color: $color-h1;
+}
+
+.address a {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.address a:hover,
+.address a:focus {
+    color: $accent;
+}
+
+.footer-block-2 {
+    padding-top: 12px;
+}
+
+.footer-text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $color-h1;
+    margin-bottom: 20px;
+}
+
+.footer-media-list {
+    display: flex;
+}
+
+.footer-media-list li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.footer-media {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: $color-h1;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-media:hover,
+.footer-media:focus {
+    background-color: $accent;
+}
+
+.footer-form {
+    margin-left: auto;
+    padding-top: 12px;
+
+}
+
+.input-footer {
+    width: 356px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin-right: 12px;
+    padding: 15px 16px;
+    color: $color-h1;
+}
+
+.subscribe {
+    height: 50px;
+    background-color: $accent;
+    border: 1px solid $accent;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    color: $color-h1;
+    padding: 10px 29px;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+}
+
+.subscribe:hover {
+    cursor: pointer;
+}
+
+.footer-form .svg {
+    margin-left: 10px;
+}

@@ -1,0 +1,41 @@
+.pecul ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.pecul li {
+    width: 270px;
+}
+
+.pecul li:not(:last-child) {
+    margin-right: 30px;
+}
+
+.pecul-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: $background-team;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.pecul h2 {
+    display: none;
+}
+
+.pecul h3 {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.pecul p {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+}
