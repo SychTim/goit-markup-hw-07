@@ -1,28 +1,20 @@
-.section.what-are-we-doing {
+.make {
     padding-top: 0;
 }
 
-.title {
-    font-size: 36px;
-    line-height: 1.16;
-    letter-spacing: 0.03em;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.what-are-we-doing ul {
+.make__list {
     display: flex;
 }
 
-.what-are-we-doing li:not(:last-child) {
-    margin-right: 30px;
-}
-
-.what-are-we-doing li {
+.make__item {
     position: relative;
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
 }
 
-.inscription {
+.make__inscription {
     width: 100%;
     position: absolute;
     bottom: 0;

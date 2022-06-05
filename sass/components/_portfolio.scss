@@ -1,14 +1,14 @@
-.filter.list {
+.filter {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
 }
 
-.filter li:not(:last-child) {
+.filter__item:not(:last-child) {
     margin-right: 8px;
 }
 
-.button {
+.radio-button {
     border: 0;
     border-radius: 4px;
     padding: 6px 22px;
@@ -21,19 +21,19 @@
     color: $title-color;
     background-color: #F5F4FA;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1)
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus,
+    &:hover {
+        color: $color-h1;
+        background-color: $accent;
+        cursor: pointer;
+        box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.12),
+            0px 1px 2px 0 rgba(0, 0, 0, 0.08);
+    }
 }
 
-.button:hover,
-.button:focus {
-    color: $color-h1;
-    background-color: $accent;
-    cursor: pointer;
-    box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.12),
-        0px 1px 2px 0 rgba(0, 0, 0, 0.08);
-}
-
-.list.cards {
+.cards {
     display: flex;
     flex-wrap: wrap;
 }
@@ -42,45 +42,34 @@
     width: 370px;
     margin-right: 30px;
     margin-bottom: 30px;
+
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    &:nth-last-child(-n+3) {
+        margin-bottom: 0;
+    }
 }
 
-.card-link {
+.card__link {
     display: block;
 
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16),
+            0px 1px 4px rgba(0, 0, 0, 0.06);
+    }
 }
 
-.card-link:hover,
-.card-link:focus {
-    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16),
-        0px 1px 4px rgba(0, 0, 0, 0.06);
-}
-
-.card:nth-child(3n) {
-    margin-right: 0;
-}
-
-.card:nth-last-child(-n+3) {
-    margin-bottom: 0;
-}
-
-.card-titles {
-    padding: 20px 24px;
-    border-left: 1px solid #EEEEEE;
-    border-right: 1px solid #EEEEEE;
-    border-bottom: 1px solid #EEEEEE;
-}
-
-.card img {
-    display: block;
-}
-
-.card-text {
+.card__overlay {
     position: relative;
     overflow: hidden;
 }
 
-.inscription-card {
+.card__inscription {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -95,14 +84,21 @@
     transform: translateY(101%);
 
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .card__link:hover &,
+    .card__link:focus & {
+        transform: translateY(0);
+    }
 }
 
-.card-link:hover .inscription-card,
-.card-link:focus .inscription-card {
-    transform: translateY(0);
+.card__titles {
+    padding: 20px 24px;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
 }
 
-.item-title {
+.card__name {
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
@@ -111,7 +107,7 @@
     margin-bottom: 4px;
 }
 
-.subtitle {
+.card__subtitle {
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.03em;

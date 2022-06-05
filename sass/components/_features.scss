@@ -1,17 +1,22 @@
-.pecul ul {
+.features__title {
+    display: none;
+}
+
+.features__list {
     display: flex;
     flex-direction: row;
 }
 
-.pecul li {
+.features__item {
     width: 270px;
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
 }
 
-.pecul li:not(:last-child) {
-    margin-right: 30px;
-}
 
-.pecul-svg {
+.features__svg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,11 +27,7 @@
     margin-bottom: 30px;
 }
 
-.pecul h2 {
-    display: none;
-}
-
-.pecul h3 {
+.features__element {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
@@ -34,8 +35,9 @@
     margin-bottom: 10px;
 }
 
-.pecul p {
+.features__text {
     font-size: 14px;
     line-height: 1.7;
     letter-spacing: 0.03em;
+    color: $text-color;
 }

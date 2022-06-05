@@ -1,4 +1,4 @@
-.backdrop {
+.modal__backdrop {
     z-index: 1;
     position: fixed;
     height: 100%;
@@ -27,20 +27,14 @@
         0 1px 1px 0 rgba(0, 0, 0, 0.14);
 }
 
-.modal .svg {
-    display: block;
+.is-hidden {
+    transform: scale(0.1);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.modal label {
-    display: block;
-    position: relative;
-}
-
-.modal label:not(:last-child) {
-    margin-bottom: 10px;
-}
-
-.modal-close {
+.modal__close {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -51,20 +45,18 @@
     cursor: pointer;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        color: $accent;
+    }
 }
 
-.modal-close:hover {
-    color: $accent;
+.close__svg {
+    display: block;
 }
 
-.is-hidden {
-    transform: scale(0.1);
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.modal-b {
+.modal__text {
     display: block;
     margin-bottom: 12px;
     font-size: 20px;
@@ -74,7 +66,16 @@
     color: $title-color;
 }
 
-.inscription-label {
+.modal__label {
+    display: block;
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.moodal__inscription-label {
     margin-bottom: 4px;
     font-size: 12px;
     line-height: 1.16;
@@ -82,7 +83,7 @@
     color: $text-color;
 }
 
-.field {
+.modal__field {
     display: block;
     width: 100%;
     height: 40px;
@@ -92,25 +93,25 @@
 
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus-visible {
+        border-color: $accent;
+        outline: 0;
+    }
+
+    &:focus-visible~.svg {
+        color: $accent;
+    }
 }
 
-.field:focus-visible {
-    border-color: $accent;
-    outline: 0;
-}
-
-.field:focus-visible~.svg {
-    color: $accent;
-}
-
-.modal-svg {
+.modal__svg {
     display: block;
     position: absolute;
     top: 50%;
     left: 12px;
 }
 
-.field-textarea {
+.modal__textarea {
     display: block;
     width: 100%;
     height: 120px;
@@ -124,37 +125,48 @@
     margin-bottom: 20px;
 
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::placeholder {
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+        color: rgba(117, 117, 117, 0.5);
+    }
+
+    &:focus-visible {
+        border-color: $accent;
+        outline: 0;
+    }
 }
 
-.field-textarea::placeholder {
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 0.5);
-}
-
-.field-textarea:focus-visible {
-    border-color: $accent;
-    outline: 0;
-}
-
-.cbox-container {
+.modal__cbox {
     position: relative;
     padding-left: 12px;
 }
 
-.checkbox-text {
+.cbox__text {
     font-size: 14px;
     line-height: 1.7;
     letter-spacing: 0.03em;
     color: $text-color;
 }
 
-.contract-terms {
+.cbox__contract-terms {
     font-size: 14px;
     line-height: 1.7;
     letter-spacing: 0.03em;
     color: $accent;
+}
+
+.modal__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .castom-checkbox {
@@ -168,43 +180,18 @@
     border-radius: 2px;
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .modal__checkbox:checked + & {
+        background-color: $accent;
+        border-color: $accent;
+    }
 }
 
-.checkbox:checked+.castom-checkbox {
-    background-color: $accent;
-    border-color: $accent;
-}
 
-.checkbox {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
-
-.send {
+.modal__send {
     position: relative;
     margin-top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 50px;
-    background-color: $accent;
-    color: $color-h1;
-    border: 0;
-    border-radius: 4px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    letter-spacing: 0.06em;
-}
-
-.send:hover {
-    cursor: pointer;
 }
